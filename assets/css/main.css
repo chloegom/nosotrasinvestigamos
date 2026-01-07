@@ -4109,3 +4109,31 @@ input, select, textarea {
 					}
 
 	}
+	
+/* Partners Section */
+.partners-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.partners-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.partners-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* spacing between logos */
+}
+
+.partners-container img {
+  max-width: 150px; /* adjust size to fit your design */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.partners-container a:hover img {
+  transform: scale(1.1);
+}
