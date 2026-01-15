@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Nosotras Investigamos – Galería</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- <link rel='shortcut icon''image/svg+xml' href='/images/icon.png' /> -->
+
+  <!-- Mosaic + modal CSS -->
+  <style>
+    /* === MOSAIC GRID (MAX 3 PER ROW) === */
+    .mosaic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+    }
+
+    @media screen and (max-width: 980px) {
+      .mosaic {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 736px) {
+      .mosaic {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mosaic-item {
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .mosaic-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .mosaic-item h3 {
+      margin-top: 0.75em;
+      font-size: 1em;
+    }
+
+    /* === MODAL === */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+    }
+
+    .modal-content {
+      background: #fff;
+      max-width: 600px;
+      margin: 10vh auto;
+      padding: 2em;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 1em;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    
+#modalTitle {
+  color: #631292;
+}
+
+#modalText {
+  font-size: 0.85em;
+  color: #333;
+}
+
+}
+
+  </style>
+</head>
+
+<body class="is-preload">
+
+
+<header id="header">
+  <h1 id="logo"><a href="index.html">Nosotras Investigamos</a></h1>
+  <nav id="nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="programa.html">Programa</a></li>
+      <li><a href="ponentes.html">Ponentes</a></li>
+      <li><a href="quienes-somos.html">Quienes somos</a></li>
+      <li><a href="inscripcion.html">Inscripción</a></li>
+      <li><a href="lugar-plan-acceso.html">Lugar y plan de acceso</a></li>
+      <li><a href="contact.html" class="button primary">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<div id="main" class="wrapper style1">
+  <div class="container">
+
+    <header class="major">
+      <h2>Quienes somos</h2>
+    </header>
+
+    <div class="mosaic">
+
+      <!-- 7 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo3.jpg',
+          'Investigadora 3',
+          'Descripción de la investigadora 3.'
+        )">
+        <img src="images/photo3.jpg" alt="">
+        <h3>Investigadora 3</h3>
+      </div>
+
+      <!-- 4 (second row, left-aligned automatically) -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo4.jpg',
+          'Investigadora 4',
+          'Descripción de la investigadora 4.'
+        )">
+        <img src="images/photo4.jpg" alt="">
+        <h3>Investigadora 4</h3>
+      </div>
+      
+
+      <!-- 2 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo2.jpg',
+          'Investigadora 2',
+          'Descripción de la investigadora 2.'
+        )">
+        <img src="images/photo2.jpg" alt="">
+        <h3>Investigadora 2</h3>
+      </div>
+
+      <!-- 3 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo3.jpg',
+          'Investigadora 3',
+          'Descripción de la investigadora 3.'
+        )">
+        <img src="images/photo3.jpg" alt="">
+        <h3>Investigadora 3</h3>
+      </div>
+
+      <!-- 4 (second row, left-aligned automatically) -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo4.jpg',
+          'Investigadora 4',
+          'Descripción de la investigadora 4.'
+        )">
+        <img src="images/photo4.jpg" alt="">
+        <h3>Investigadora 4</h3>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="" alt="">
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+
+<footer id="footer">
+  <ul class="copyright">
+    <li>&copy; Nosotras Investigamos</li>
+    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+  </ul>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+function openModal(img, title, text) {
+  document.getElementById("modalImg").src = img;
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalText").innerText = text;
+  document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

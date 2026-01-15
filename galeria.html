@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Nosotras Investigamos – Galería</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- <link rel='shortcut icon''image/svg+xml' href='/images/icon.png' /> -->
+
+  <!-- Mosaic + modal CSS -->
+  <style>
+    /* === MOSAIC GRID (MAX 3 PER ROW) === */
+    .mosaic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+    }
+
+    @media screen and (max-width: 980px) {
+      .mosaic {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 736px) {
+      .mosaic {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mosaic-item {
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .mosaic-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .mosaic-item h3 {
+      margin-top: 0.75em;
+      font-size: 1em;
+    }
+
+    /* === MODAL === */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+    }
+
+    .modal-content {
+      background: #fff;
+      max-width: 600px;
+      margin: 10vh auto;
+      padding: 2em;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 1em;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    
+#modalTitle {
+  color: #631292;
+}
+
+#modalText {
+  font-size: 0.85em;
+  color: #333;
+}
+
+}
+
+  </style>
+</head>
+
+<body class="is-preload">
+
+
+<header id="header">
+  <h1 id="logo"><a href="index.html">Nosotras Investigamos</a></h1>
+  <nav id="nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="programa.html">Programa</a></li>
+      <li><a href="ponentes.html">Ponentes</a></li>
+      <li><a href="quienes-somos.html">Quienes somos</a></li>
+      <li><a href="inscripcion.html">Inscripción</a></li>
+      <li><a href="lugar-plan-acceso.html">Lugar y plan de acceso</a></li>
+      <li><a href="contact.html" class="button primary">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- Ponentes -->
+<div id="main" class="wrapper style1">
+  <div class="container">
+
+    <header class="major">
+      <h2>Ponentes</h2>
+    </header>
+
+    <div class="mosaic">
+
+      <!-- 1 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo1.jpg',
+          'Elisa Fernández Núñez',
+          'Elisa es doctora en Biociencias Moleculares (UAM) y ha desarrollado su trabajo científico en distintas áreas de investigación biomédica en el Hospital Nacional de Parapléjicos de Toledo, el Instituto de Mastocitosis de Castilla-La Mancha y finalmente en el Instituto de Investigaciones Biomédicas “Alberto Sols” del CSIC con una plaza de Técnica Superior Especializada. Desde abril de 2023 es Consejera Técnica del Ministerio de Sanidad, donde coordina las relaciones internacionales del ministerio en ámbito de Naciones Unidas, especialmente con la Organización Mundial de la Salud (OMS). Comprometida con la divulgación científica, colabora con el programa Ciudad Ciencia del CSIC desde 2018 y ha participado como ponente en múltiples jornadas, congresos y actividades educativas. Sus charlas abordan temas como mujeres en la ciencia, enfermedades raras y tecnologías de edición genética, contribuyendo a despertar vocaciones y a acercar la realidad de la ciencia a distintos públicos.'
+        )">
+        <img src="images/Elisa_Fernandez.jpeg" alt="">
+        <h3>Elisa Fernández Núñez</h3>
+      </div>
+
+      <!-- 2 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo2.jpg',
+          'Silvia Quiñones Cañete',
+          'Silvia es investigadora predoctoral en el Instituto de Biomedicina de Sevilla (IBiS), donde pasa gran parte de su tiempo haciendo fotos a vasos sanguíneos de algún cerebro. Graduada en Bioquímica por la Universidad de Sevilla, realizó un Máster en Fisiología y Neurociencia en la misma institución. Le gustan las preguntas espontáneas y frunce mucho el ceño cuando no entiende algo (esto le pasa mucho en ciencia, aunque las células no siempre le devuelvan una respuesta). Su pasión por la divulgación se remonta al instituto, donde descubrió que le encantaba exponerse al público y hacer presentaciones. Desde entonces, ha participado como divulgadora científica para la plataforma Microbacterium y se ha implicado en la organización de visitas de institutos públicos de España al IBiS para promover la carrera científica. En 2025 recibió el Premio Excellent Student Rita Levi-Montalcini por su charla sobre su investigación en el 20 Encuentro de la Sociedad Española de Neurociencia (SENC). Actualmente forma parte del Comité de Comunicación de dicha sociedad. ¿Su máxima? Lo bueno, si compartido, dos veces bueno.'
+        )">
+        <img src="images/Silvia_Quinones.jpg" alt="">
+        <h3>Silvia Quiñones Cañete</h3>
+      </div>
+
+      <!-- 3 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo3.jpg',
+          'Alicia Elena Rosales Nieves',
+          'Alicia es investigadora en el IBiS en Sevilla. Obtuvo su título de Biología en la UCV-Venezuela en 2003 y posteriormente se trasladó a Estados Unidos para trabajar como técnica de investigación en el laboratorio de la Dra. Susan Parkhurst en el Fred Hutchinson Cancer Research Center (FHCRC). Durante esta etapa se centró en el estudio del desarrollo embrionario temprano y la oogénesis en Drosophila, publicando su proyecto principal en Nature Cell Biology (2006). Tras tres años y medio en el FHCRC, decidió trasladarse a España para hacer el doctorado en el Centro Andaluz de Biología del Desarrollo (CABD) bajo la supervisión del Dr. Acaimo González-Reyes. En su tesis doctoral defendida en 2013, se enfocó en la división de las células madre germinales y la caracterización de la función del factor de transcripción Pointed, en la formación de la línea germinal. Posteriormente, obtuvo una beca postdoctoral para incorporarse al laboratorio del Dr. Alberto Pascual en el IBiS, reorientando su investigación hacia la neurodegeneración y la enfermedad de Alzheimer. Desde 2017 estudia la dinámica celular asociada a las placas de beta-amiloide, demostrando su papel en la disfunción endotelial, trabajo publicado en Nature Communications (2021). Compagina su labor investigadora con la docencia universitaria y actividades de divulgación científica.'
+        )">
+        <img src="images/Alicia_Rosales.jpeg" alt="">
+        <h3>Alicia Elena Rosales Nieves</h3>
+      </div>
+
+      <!-- 4 (second row, left-aligned automatically) -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo4.jpg',
+          'Amparo Callejón',
+          'Amparo es doctora en Ingeniería de Telecomunicación y cuenta con una trayectoria consolidada en el ámbito de la ingeniería biomédica y la neuroingeniería. Inició su carrera en la US, donde trabajó en el desarrollo de sistemas de comunicación inalámbrica para biosensores implantados, y continuó con una estancia posdoctoral en la Universidad de Lisboa, centrada en la creación de modelos computacionales del cerebro para optimizar técnicas de estimulación transcraneal no invasivas. En 2019 regresó a España para desarrollar un proyecto de investigación en el Hospital Universitario Virgen Macarena de Sevilla, centrado en modelado computacional y simulación numérica para la optimización de las técnicas de estimulación con implante coclear. Actualmente combina la investigación clínica con herramientas de modelado computacional, inteligencia artificial y neurociencia cognitiva para mejorar el diagnóstico y tratamiento de la hipoacusia y el deterioro cognitivo. Lidera proyectos competitivos nacionales e internacionales en el ámbito de los implantes cocleares, la pérdida auditiva y la simulación quirúrgica. Además, desarrolla una activa labor docente y mantiene un firme compromiso con la divulgación científica y la transferencia de conocimiento a la sociedad.'
+          )">
+        <img src="images/Amparo_Callejon.jpg" alt="">
+        <h3>Amparo Callejón</h3>
+      </div>
+      
+      <!-- 5 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo1.jpg',
+          'Claudia García',
+          'Claudia es neurocientífica con formación en Bioquímica por la US y doctorado en Neurociencia por la Universidad de Valparaíso (Chile). Durante su doctorado investigó la epilepsia experimental y la neuroinflamación mediada por hemicanales, identificando nuevas dianas terapéuticas y evaluando compuestos con potencial neuroprotector. Actualmente es investigadora postdoctoral en el Instituto de Biomedicina de Sevilla (IBiS), en el grupo del Profesor José López-Barneo y el laboratorio de la Profesora Patricia González-Rodríguez, donde estudia cómo la disfunción bioenergética contribuye a la progresión de la enfermedad de Parkinson, combinando enfoques fisiológicos y ómicos para descubrir nuevos biomarcadores y mecanismos de la enfermedad. Tanto la comunicación científica como la mentoría y el trabajo colaborativo forman parte de su trayectoria orientada a comprender mejor las bases celulares y moleculares de las enfermedades neurológicas y a contribuir al desarrollo de soluciones con impacto clínico.'
+          )">
+        <img src="images/Claudia_Garcia.jpg" alt="">
+        <h3>Claudia García</h3>
+      </div>
+
+      <!-- 6 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo2.jpg',
+          'Diana Aguilar Morante',
+          'Diana es una investigadora EMERGIA en el Instituto de Biomedicina de Sevilla (IBiS). En 2011, defendió su Tesis Doctoral en el Instituto de Investigaciones Biomédicas “Alberto Sols” especializándose en el estudio de tumores originados en el Sistema Nervioso. Más tarde, realizó una primera etapa postdoctoral en Sevilla y posteriormente, en 2017, comenzó una segunda etapa postdoctoral en el Centro de Investigación de la Sociedad Danesa del Cáncer, volviendo a España a finales de 2020. Actualmente, su línea de investigación se basa en el estudio de un tumor cerebral llamado glioblastoma. En concreto, estudia cómo sus células son capaces de reparar su ADN, después de la quimio- o radioterapia, haciendo que sea un tumor imposible de eliminar, por lo que hacen falta nuevos fármacos que impidan esa reparación. A lo largo de su trayectoria, ha mantenido un firme compromiso con la divulgación científica y la promoción del conocimiento. Es cofundadora de la Asociación Pregunta a un Cientific@ y ha colaborado con The Conversation y en el podcast Noosfera, donde ha abordado temas relacionados con los tumores cerebrales, reforzando así su compromiso con la comunicación científica en distintos formatos.'
+        )">
+        <img src="images/Diana_Morante.jpg" alt="">
+        <h3>Diana Aguilar Morante</h3>
+      </div>
+
+      <!-- 7 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo3.jpg',
+          'Sara Morcuende',
+          'Durante más de dos décadas, el trabajo de Sara se ha centrado en explorar los mecanismos celulares y moleculares que regulan el funcionamiento del sistema nervioso y su vulnerabilidad frente a procesos neurodegenerativos. Ha investigado cómo se producen el aprendizaje y el control motor, el papel de los factores tróficos en la supervivencia neuronal y en la neurogénesis, y su relación con enfermedades como la esclerosis lateral amiotrófica. Actualmente, está trabajando en una nueva línea centrada en cómo mitigar los efectos del envejecimiento en el sistema nervioso. Ha tenido la suerte de colaborar con equipos internacionales y publicar en revistas de referencia, pero lo que más la motiva es no solo avanzar en el conocimiento básico, sino también abrir nuevas vías que puedan ayudar a mejorar la vida de las personas. Sara trabaja en el Departamento de Fisiología de la US, donde también le apasiona enseñar y compartir la ciencia. Como mujer neurocientífica, defiende la visibilidad y el liderazgo femenino en la investigación, demostrando que es posible compatibilizar una carrera científica exigente con la vida personal. '
+        )">
+        <img src="images/Sara_Morcuende.jpg" alt="">
+        <h3>Sara Morcuende</h3>
+      </div>
+
+      <!-- 8 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo4.jpg',
+          'Raquel Cano',
+          'Raquel es investigadora y docente en Fisiología Humana y del ejercicio con una trayectoria centrada en el estudio de los mecanismos que sustentan la comunicación neuromuscular. Su carrera se ha desarrollado entre Sevilla, Egham (UK) y Denver (EE.UU.), donde se especializó en el análisis de la exocitosis y la dinámica vesicular mediante técnicas de electrofisiología y microscopía fluorescente avanzada. En la actualidad dirige una línea de investigación aplicada que conecta la neurociencia con la fisiología del ejercicio y la salud metabólica. En este proyecto se estudia cómo el ayuno intermitente afecta a la composición corporal y a los cambios bioeléctricos. Compagina esta labor con la divulgación científica, la docencia y con proyectos de innovación docente que buscan acercar la neurofisiología a los estudiantes mediante herramientas digitales y experiencias experimentales significativas.'
+        )">
+        <img src="images/Raquel_Cano_crop.jpg" alt="">
+        <h3>Raquel Cano</h3>
+      </div>
+      
+      <!-- 9 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo4.jpg',
+          'Rocío Leal',
+          'Rocío es licenciada en Biología y doctora en Neurociencias, con una trayectoria centrada en entender cómo el cerebro aprende, recuerda y coopera. Ha trabajado con técnicas avanzadas de electrofisiología, microscopía e inmunohistoquímica, incluyendo una estancia postdoctoral en EE. UU. estudiando la hemodinámica cerebral en epilepsia. Desde su regreso ha consolidado una línea propia en neuroendocrinología, cognición y neurogénesis, liderando proyectos competitivos y firmando como autora de correspondencia en publicaciones destacadas. Actualmente desarrolla una línea de investigación sobre los mecanismos prefrontales de la cooperación. Combina su labor científica con una sólida vocación e implicación docente y divulgadora. Coordina el Programa de Doctorado Interuniversitario en Neurociencias y ha dirigido más de 40 TFG/TFM y varias tesis doctorales. Además, fue la organizadora de las primeras Jornadas de Neurocientíficas en 2018, que continuó impulsando hasta 2022. Desde entonces participa cada 11F con charlas en colegios, talleres y actividades. Su objetivo: acercar la neurociencia a la sociedad y dar visibilidad al papel de las mujeres científicas para que sirvan de referentes a las nuevas generaciones de neurocientíficas.'
+        )">
+        <img src="images/Rocio_Leal.jpg" alt="">
+        <h3>Rocío Leal</h3>
+      </div>
+
+      <!-- 10 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo2.jpg',
+          'Patricia Díaz Galvan',
+          'Patricia es investigadora postdoctoral en el Instituto de Biomedicina de Sevilla (IBiS), dentro del grupo de Trastornos del Movimiento, donde desarrolla una línea de investigación en neuroimagen aplicada a la enfermedad de Parkinson. Se doctoró en Psicología por la Universidad de La Laguna y ha completado su formación postdoctoral en centros de referencia internacional en Estados Unidos y Suecia. Su trayectoria se ha centrado en el estudio de los mecanismos biológicos de las enfermedades neurodegenerativas en la edad adulta mediante la integración de neuroimagen avanzada y biomarcadores moleculares. Actualmente desarrolla su investigación gracias a la beca postdoctoral Sara Borrell del Instituto de Salud Carlos III. En la actualidad busca demostrar si la actividad física puede actuar como una intervención biológicamente fundamentada para frenar la progresión del Parkinson, identificando los mecanismos de neuroprotección, inflamación y neuroplasticidad implicados. Además de su actividad investigadora, mantiene un firme compromiso con la divulgación científica. Su objetivo es que los avances en neurociencia se traduzcan en herramientas reales de prevención, tratamiento y mejora de la calidad de vida.'
+        )">
+        <img src="images/Patricia_Diaz.png" alt="">
+        <h3>Patricia Díaz Galvan</h3>
+      </div>
+
+      <!-- 3 -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo3.jpg',
+          'Génova Carrero',
+          'Génova es investigadora postdoctoral en el Departamento de Fisiología de la US. Realizó su tesis doctoral en la Universidad Médica de Viena, centrada en el estudio de las propiedades sensoriales y motoras del sistema oculomotor, con especial atención a la propiocepción de los músculos extraoculares. Recientemente le ha sido concedido un contrato Juan de la Cierva, que comenzará a disfrutar a mediados de 2026, para investigar sobre la plasticidad neuronal del sistema oculomotor. Su investigación actual analiza cómo la axotomía y la administración de factores tróficos modulan la expresión de los cotransportadores iónicos KCC2 y NKCC1 en motoneuronas extraoculares, y cómo estos cambios influyen en el equilibrio sináptico de excitación/inhibición. Además, explora el papel de KCC2 y NKCC1 en la ELA, ya que el sistema oculomotor, resistente a la enfermedad, podría mantener su función al no presentar alteraciones en estos cotransportadores.'
+        )">
+        <img src="images/Genova_Carrero.jpg" alt="">
+        <h3>Génova Carrero</h3>
+      </div>
+
+      <!-- 4 (second row, left-aligned automatically) -->
+      <div class="mosaic-item"
+        onclick="openModal(
+          'images/photo4.jpg',
+          'Nathalia Garrido Torres',
+          'Nathalia es especialista en Psiquiatría Infantil y de la Adolescencia en el Hospital Universitario Virgen del Rocío de Sevilla y doctora en Biomedicina e Investigación Clínica por la US. Su labor clínica e investigadora integra la práctica asistencial con la innovación tecnológica y la transferencia del conocimiento, orientándose a la identificación de microfenotipos transdiagnósticos en salud mental infantil y juvenil y al desarrollo de intervenciones breves y a tiempo, con impacto directo en la práctica clínica. También desarrolla herramientas digitales, inteligencia artificial y robótica social aplicadas a la salud mental, con el objetivo de implementar intervenciones breves, accesibles y adaptadas a la práctica clínica real. Actualmente es investigadora principal de un proyecto que evalúa la eficacia de una intervención psicoterapéutica de sesión única con apoyo de robótica social en adolescentes. En este contexto ha creado el programa AGENCIA, una intervención transdiagnóstica temprana para ansiedad y depresión.  Además, participa activamente en divulgación científica centrada en la salud mental juvenil, destacando su contribución en Mentescopia, un proyecto dirigido a promover el bienestar psicológico y salud mental en adolescentes.'
+        )">
+        <img src="images/Nathalia_Garrido_crop.jpg" alt="">
+        <h3>Nathalia Garrido Torres</h3>
+      </div>
+      
+      
+      </div>
+    </div>
+    
+<!-- Colaboradores -->
+<div id="main" class="wrapper style1">
+  <div class="container">
+    <header class="major">
+      <h2>Colaboradores</h2>
+    </header>
+          
+      <div class="mosaic">
+
+        <!-- 1 -->
+        <div class="mosaic-item"
+          onclick="openModal(
+            'images/photo3.jpg',
+            'Investigadora 3',
+            'Descripción de la investigadora 3.'
+          )">
+          <img src="images/photo3.jpg" alt="">
+          <h3>Investigadora 3</h3>
+        </div>
+
+        <!-- 2 -->
+        <div class="mosaic-item"
+          onclick="openModal(
+            'images/photo4.jpg',
+            'Investigadora 4',
+            'Descripción de la investigadora 4.'
+          )">
+          <img src="images/photo4.jpg" alt="">
+          <h3>Investigadora 4</h3>
+        </div>
+  </div>
+</div>
+
+    
+</div>
+
+
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="" alt="">
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+
+<footer id="footer">
+  <ul class="copyright">
+    <li>&copy; Nosotras Investigamos</li>
+    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+  </ul>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+function openModal(img, title, text) {
+  document.getElementById("modalImg").src = img;
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalText").innerText = text;
+  document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
