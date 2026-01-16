@@ -1,11 +1,18 @@
 <!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-  <title>Nosotras Investigamos – Galería</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <!-- <link rel='shortcut icon''image/svg+xml' href='/images/icon.png' /> -->
+	<head>
+		<title>Nosotras investigamos </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel='shortcut icon''image/svg+xml' href='/images/icon_tr.png' />
+	</head>
 
   <!-- Mosaic + modal CSS -->
   <style>
@@ -105,7 +112,7 @@
                   <li><a href="bio.html">Quienes somos</a></li>
                   <!-- Opens in a new tab -->
                   <li><a href="https://forms.gle/KfBtvbPLUdY7W2du6" target="_blank" rel="noopener noreferrer">Inscripción</a></li>
-                  <li><a href="lugar.html">Lugar y plan de acceso</a></li>
+                  <li><a href="lugar.html">Lugar</a></li>
                   <li><a href="contact.html" class="button primary">Contacto</a></li>
                 </ul>
               </nav>
@@ -255,11 +262,6 @@
       </div>
       
       
-      <!-- 4 -->
-      <div class="mosaic-item"
-        <h3> </h3>
-      </div>
-      
         <!-- 4 -->
         <div class="mosaic-item"
           onclick="openModal(
@@ -288,28 +290,26 @@
         <div class="mosaic-item"
           onclick="openModal(
             'images/photo3.jpg',
-            'Investigadora 3',
+            'María del Mar Benítez Hernández ',
             'Descripción de la investigadora 3.'
           )">
-          <img src="images/photo3.jpg" alt="">
-          <h3>Investigadora 3</h3>
+          <img src="images/Mar_Benitez.jpg" alt="">
+          <h3>María del Mar Benítez Hernández </h3>
         </div>
 
         <!-- 2 -->
         <div class="mosaic-item"
           onclick="openModal(
             'images/photo4.jpg',
-            'Investigadora 4',
-            'Descripción de la investigadora 4.'
+            'Cía. La Imbuición',
+            'La Imbuición es fundada en Sevilla en 2024 con el objetivo de generar propuestas escénicas que dialoguen con la sociedad y el territorio desde una mirada contemporánea, cercana y multidisciplinar. La compañía se caracteriza por una metodología sensible y cercana, que parte de lo humano y lo cotidiano para construir propuestas artísticas profundas, accesibles y transformadoras. Las artistas combinan una sólida formación profesional con una mirada abierta, crítica y flexible, que se enriquece continuamente a través del trabajo con otros sectores como la música, la poesía o la intervención social. Perfomarán el espectáculo <i>Nos Imbuyes Tú</i>. Este espectáculo integrará poesía, música en directo y danza para fomentar una reflexión creativa en torno a la neurociencia.<br><br> Para más información, visita esta web: <a href=&quot; https://www.laimbuicion.com/proyectos/nos-imbuyes-tu/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;> www.laimbuicion.com/proyectos/nos-imbuyes-tu</a>'
           )">
-          <img src="images/photo4.jpg" alt="">
-          <h3>Investigadora 4</h3>
+          <img src="images/LaImbuición.jpg" alt="">
+          <h3>Cía. La Imbuición</h3>
         </div>
   </div>
 </div>
 
-    
-</div>
 
 
 <div id="modal" class="modal" onclick="closeModal()">
@@ -333,7 +333,12 @@
 	</ul>
 </footer>
 
+
+</div>
+
+<!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.dropotron.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
@@ -345,7 +350,7 @@
 function openModal(img, title, text) {
   document.getElementById("modalImg").src = img;
   document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalText").innerText = text;
+  document.getElementById("modalText").innerHTML = text;
   document.getElementById("modal").style.display = "block";
 }
 
